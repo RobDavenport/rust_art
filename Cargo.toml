@@ -1,0 +1,11 @@
+[package]
+name = "rust_art"
+version = "0.1.0"
+authors = ["Zerve0 <zerve0@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "1.0.8"
+actix-files = "0.1.7"
