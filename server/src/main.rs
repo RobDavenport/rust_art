@@ -9,6 +9,7 @@ fn index() -> Result<HttpResponse> {
 }
 
 fn main() {
+    print!("Main entry.");
     HttpServer::new(|| {
         App::new()
             .route("/", web::get().to(index))
@@ -17,4 +18,5 @@ fn main() {
     .unwrap()
     .run()
     .unwrap();
+    print!("Server online.");
 }
