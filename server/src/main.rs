@@ -1,22 +1,10 @@
-extern crate actix_web;
+extern crate pretty_env_logger;
+extern crate warp;
 
-use actix_web::{web, App, HttpResponse, HttpServer, Result, http::StatusCode};
-
-fn index() -> Result<HttpResponse> {
-    Ok(HttpResponse::build(StatusCode::OK)
-        .content_type("text/html; charset=utf-8")
-        .body(include_str!("../static/index.html")))
-}
+use warp::Filter;
 
 fn main() {
-    print!("Main entry.");
-    HttpServer::new(|| {
-        App::new()
-            .route("/", web::get().to(index))
-    })
-    .bind("127.0.0.1:8088")
-    .unwrap()
-    .run()
-    .unwrap();
-    print!("Server online.");
+    let files = warp::fs::dir("static");
+
+    warp::serve(files).run(([127, 0, 0, 1], 8888));
 }
