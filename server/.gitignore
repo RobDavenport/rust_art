@@ -1,2 +1,12 @@
 /target
 **/*.rs.bk
+/node_modules
+
+/static/*.js
+/static/*.wasm
+
+client_bg.d.ts
+client_bg.wasm
+client.d.ts
+client.js
+package.json
