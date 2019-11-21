@@ -2,7 +2,7 @@ async function run() {
     const { PixelMap, GenerationMethod, ColorDepth } = await import("./pkg/client")
     const { memory } = await import("./pkg/client_bg")
     
-    const image = PixelMap.new(GenerationMethod.SmoothPixels, ColorDepth.Bit18)
+    const image = PixelMap.new(GenerationMethod.Random, ColorDepth.Bit18)
 
     const width = image.width()
     const height = image.height()
